@@ -87,6 +87,11 @@
     - if !player_throw
       / SECTION-1
       %section#Section-1
+        / GO BTN WRAPPER
+        .gobtnwrapper
+          %a.gobtn{href: "#Section-2"}
+            %i.icon-chevron-down.icon-large
+        / /GO BTN WRAPPER
         .container
           .row
             .span12.page-header.text-center
@@ -115,20 +120,23 @@
               %p
                 %a.btn.btn-large{:href => '?choice=Tijera#Section-1'} TIJERA
         / / CONTAINER
-        %br/
       / / SECTION-1
     - else
       / SECTION-1
       %section#Section-1
+        / GO BTN WRAPPER
+        .gobtnwrapper
+          %a.gobtn{href: "#Section-2"}
+            %i.icon-chevron-down.icon-large
+        / /GO BTN WRAPPER
         .container
           .row
             .span12.page-header.text-center
-              %h3 Elección de la máquina: #{computer_throw}
+              %h2 Elección de la máquina: #{computer_throw}
               %br/
-              %h3 Tu elección: #{player_throw}
+              %h2 Tu elección: #{player_throw}
               %br/
-              %h3= answer
-          %br/
+              %h2= answer
           .row-fluid
             .span4.text-center.box
               %div
@@ -149,14 +157,18 @@
               %p
                 %a.btn.btn-large{:href => '?choice=Tijera'} TIJERA
         / / CONTAINER
-        %br/
       / / SECTION-1
     / SECTION-2
     %section#Section-2
+      / GO BTN WRAPPER
+      .gobtnwrapper
+        %a.gobtn{href: "#Section-3"}
+          %i.icon-chevron-down.icon-large
+      / /GO BTN WRAPPER
       .container
         .row
           .span12.page-header.text-center
-            %h3 Estadísticas del juego
+            %h3 Estadísticas del juego para las tiradas del jugador
             %p.lead
         .row
           .span12.page-header.text-center
@@ -173,6 +185,11 @@
     / / SECTION-2
     / SECTION-3
     %section#Section-3
+      / GO BTN WRAPPER
+      .gobtnwrapper
+        %a.gobtn{href: "#foot-sec"}
+          %i.icon-chevron-down.icon-large
+      / /GO BTN WRAPPER
       .container
         .row
           .span12.page-header.text-center
@@ -215,7 +232,7 @@
               %a{href: ""}
                 %i
             .circ-wrap
-              %a{href: "https://github.com/alu0100592368/practica04", target: "_blank"}
+              %a{href: "https://github.com/alu0100592368/practica05", target: "_blank"}
                 %i.icon-github.icon-4x
             .circ-wrap
               %a{href: ""}
