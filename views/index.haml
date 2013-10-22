@@ -89,9 +89,6 @@
           .row
             .span12.page-header.text-center
               %h3= answer
-              %h3= tiradas['Victorias']
-              %h3= tiradas['Empate']
-              %h3= tiradas['Derrotas']
               %br/
           %br/
           %br/
@@ -152,6 +149,26 @@
         / / CONTAINER
         %br/
       / / SECTION-1
+    / SECTION-3
+    %section#Section-3
+      .container
+        .row
+          .span12.page-header.text-center
+            %h3 Estadísticas del juego
+            %p.lead
+        .row
+          .span12.page-header.text-center
+            %h3 
+              Victorias:
+              = tiradas['Victorias']
+            %h3
+              Empates:
+              = tiradas['Empate']
+            %h3
+              Derrotas:
+              = tiradas['Derrotas']
+      / / CONTAINER
+    / / SECTION-3
     / SECTION-2
     %section#Section-2
       .container
