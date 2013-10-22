@@ -9,6 +9,7 @@ module RockPaperScissors
       @content_type = :html
       @defeat = {'Piedra' => 'Tijera', 'Papel' => 'Piedra', 'Tijera' => 'Papel'}
       @throws = @defeat.keys
+      @tiradas = {'Empate' => 0, 'Derrotas' => 0, 'Victorias' => 0}
     end
 
     def call(env)
@@ -19,14 +20,18 @@ module RockPaperScissors
       answer = if !@throws.include?(player_throw)
           "Elija una de las tres opciones:"
         elsif player_throw == computer_throw
+          @tiradas['Empates'] = @tiradas['Empates'] + 1
           "¡Haz empatado con la máquina!"
         elsif computer_throw == @defeat[player_throw]
+          @tiradas['Victorias'] = @tiradas['Victorias'] + 1
           "¡Muyy biennn ganaste! #{player_throw} gana a #{computer_throw}"
         else
+          @tiradas['Derrotas'] = @tiradas['Derrotas'] + 1
           "Oops...¡Perdiste! #{computer_throw} gana a #{player_throw}. ¡Suerte la próxima vez!"
         end
       engine = Haml::Engine.new File.open("views/index.haml").read
       res = Rack::Response.new
+      res.set_cookie("diego88", {:value => @tiradas, :path => "/", :expires => Time.now+24*60*60})
       res.write engine.render(
         {},
         :answer => answer,
