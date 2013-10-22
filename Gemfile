@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 
-group :development do
-  gem 'rack'
-  gem 'thin'
-  gem 'haml'
-end
+gem 'rack', :group  => [:development]
+gem 'thin', :group  => [:development]
+gem 'haml', :group  => [:development]
+gem 'rspec', :groups  => [:development, :test]
+gem 'rack-test', :groups  => [:development, :test]
 
-group :testing do
-
-end
