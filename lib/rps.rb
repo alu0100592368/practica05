@@ -34,6 +34,7 @@ module RockPaperScissors
       res.set_cookie("diego88", {:value => @tiradas, :path => "/", :expires => Time.now+24*60*60})
       res.write engine.render(
         {},
+        :tiradas => @tiradas,
         :answer => answer,
         :throws => @throws,
         :computer_throw => computer_throw,
