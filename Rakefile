@@ -17,3 +17,8 @@ desc "Ejecutar el cliente con la eleccion de Scissors"
 task :scissors do
   sh %q{curl -v 'http://localhost:8080?choice=scissors'}
 end
+
+desc "Ejecutar test con Pruebas Unitarias"
+task :test do
+	sh "ruby -Ilib -Itest test/tc_rps.rb"
+end
