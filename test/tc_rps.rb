@@ -2,7 +2,7 @@ require "test/unit"
 require "rack/test"
 require "./lib/rps"
 
-class RPSTest < Test::Unit::TestCase
+class PPTTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
