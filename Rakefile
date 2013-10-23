@@ -20,5 +20,5 @@ end
 
 desc "Ejecutar test con Pruebas Unitarias"
 task :test do
-	sh "ruby -Ilib -Itest test/tc_rps.rb"
+  sh "ruby -Ilib -Itest test/tc_rps.rb"
 end
