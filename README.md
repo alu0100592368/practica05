@@ -4,23 +4,31 @@ Práctica #5
 Añadir Pruebas a Piedra Papel Tijeras
 ----------------------------------
 
-Diego Williams Aguilar Montaño
+Autor: Diego Williams Aguilar Montaño
 
 Descripción de la práctica
 --------------------------
-Esta práctica consiste en añadir pruebas.......... de estilo (boostrap) como continuación de la práctica: "[Añadir Template Haml a Rock, Paper, Scissors](https://dl.dropboxusercontent.com/u/14539152/LPP/LPPbook/node355.html)", modificamos en el fichero config.ru el middleware Rack::Static que intercepta las peticiones por ficheros estáticos (javascript, imágenes, hojas de estilo, etc.) basandose en los prefijos de las urls pasadas en las opciones y los sirve utilizando un objeto Rack::File. A continuación enlazamos las hojas de estilo en el template views/index.haml.
+Esta práctica sigue como continuación de la práctica: "[Añadir Hojas de estilo a Rock, Paper, Scissors](https://dl.dropboxusercontent.com/u/14539152/LPP/LPPbook/node360.html)" añadiendo una sesión para llevar los contadores de las partidas de los jugadores, es decir, el número de victorias empates y derrotas, para ello se ha establecido una cookie usando Rack::Response junto a las modificaciones del fichero index.haml para mostrar la tabla de contadores de las partidas; tambíen se han implementado Pruebas Unitarias (directorio /test) así como también desarrollo dirigido por pruebas (TDD) (directorio /spec).
 
 
 Instrucciones
 -------------
 
-1. Ejecutar el programa mediante el archivo rake proporcionado:
+1. Realizar un bundle install para instalar las gemas requeridas del fichero gemset proporcionado:
+
+        $ bundle install
+
+2. Arrancar el servidor mediante el archivo rake proporcionado:
 
         $ rake
+3. El servidor arrancará.  
+4. Ahora visitamos la página [http://localhost:8080](http://localhost:8080) en el navegador preferido para jugar en la App.  
+5. Para realizar los test con pruebas unitarias ejecutar mediante el archivo rake proporcionado:
 
-2. El servidor arrancará.
-3. Ahora visitamos la página [http://localhost:8080](http://localhost:8080) en el navegador preferido.  
+        $ rake test
+6. Para realizar los test con Rspec ejecutar mediante el archivo rake proporcionado:
 
+        $ rake spec
 ---
 
 Universidad de La Laguna  
