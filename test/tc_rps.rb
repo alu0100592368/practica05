@@ -1,6 +1,6 @@
 require "test/unit"
 require "rack/test"
-require "./lib/rps"
+require "rsack"
 
 class PPTTest < Test::Unit::TestCase
   include Rack::Test::Methods
