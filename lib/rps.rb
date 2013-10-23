@@ -9,7 +9,7 @@ module RockPaperScissors
       @content_type = :html
       @defeat = {'Piedra' => 'Tijera', 'Papel' => 'Piedra', 'Tijera' => 'Papel'}
       @throws = @defeat.keys
-      @tiradas = {'Empate' => 0, 'Derrotas' => 0, 'Victorias' => 0}
+      @tiradas = {'Empates' => 0, 'Derrotas' => 0, 'Victorias' => 0}
     end
 
     def call(env)
@@ -31,7 +31,9 @@ module RockPaperScissors
         end
       engine = Haml::Engine.new File.open("views/index.haml").read
       res = Rack::Response.new
-      res.set_cookie("diego88", {:value => @tiradas, :path => "/", :expires => Time.now+24*60*60})
+      res.set_cookie("tiradas-Victorias", {:value => @tiradas['Victorias'], :path => "/", :domain => "example.com", :expires => Time.now+24*60*60})
+      res.set_cookie("tiradas-Empates", {:value => @tiradas['Empates'], :path => "/", :domain => "example.com", :expires => Time.now+24*60*60})
+      res.set_cookie("tiradas-Derrotas", {:value => @tiradas['Derrotas'], :path => "/", :domain => "example.com", :expires => Time.now+24*60*60})
       res.write engine.render(
         {},
         :tiradas => @tiradas,
